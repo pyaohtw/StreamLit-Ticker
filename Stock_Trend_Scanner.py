@@ -1,7 +1,8 @@
 import pandas as pd
 import altair as alt
 import streamlit as st
-from sidebar import Sidebar
+import sidebar as sb
+from Sidebar import sidebar
 from data_src import DataSource
 
 class App:
@@ -21,7 +22,7 @@ class App:
             'amazon': 'AMZN'
         }
 
-        self.sidebar = Sidebar(self.tickers, maxDays)
+        self.sb = Sidebar(self.tickers, maxDays)
         self.data = DataSource(maxDays)
         
         # use this func control the rerun main page
